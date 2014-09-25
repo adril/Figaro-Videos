@@ -9,6 +9,6 @@ to install the application type:
 `pod install`
 
 then:
-open Tenjoon.xcworkspace
+`open Figaro.xcworkspace`
 
 have fun ;)
