@@ -21,12 +21,7 @@ typedef void (^BaseTableViewCellCompletionHandler)(id object, UITableViewCell **
 @property (nonatomic, strong) BaseTableViewCellCompletionHandler cellForRowAtIndexPathCompletion;
 @property (nonatomic, strong) BaseTableViewCellCompletionHandler willDisplayCellCompletion;
 
-//@property (nonatomic, strong) BaseCompletionHandler pullToRefreshCompletion;
-
 - (void)registerNibWithIdentifier:(NSString *)identifier;
-//- (void)disablePullToRefresh;
-//- (void)stopRefreshAnimation;
-//- (void)startRefreshAnimation;
 
 - (void)insertList:(NSMutableArray *)list;
 - (void)insertItem:(id)object;

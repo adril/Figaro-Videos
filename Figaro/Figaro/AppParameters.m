@@ -12,8 +12,7 @@ static NSString *selectedEnvironement = @"production";
 
 @implementation AppParameters
 
-+ (AppParameters*)defaultParameters
-{
++ (AppParameters*)defaultParameters {
     static AppParameters *_sharedClient = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

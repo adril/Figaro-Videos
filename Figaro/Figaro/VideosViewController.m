@@ -30,7 +30,7 @@
 	__weak __typeof(self)weakSelf = self;
 	
 	self.categoriesCollectionView.backgroundColor = [UIColor color];
-	self.categoriesCollectionView.textColor = [UIColor whiteColor];
+	self.categoriesCollectionView.textColor = [UIColor titleColor];
 	
 	self.subcategoriesCollectionView.backgroundColor = [UIColor whiteColor];
 	self.subcategoriesCollectionView.textColor = [UIColor color];
@@ -110,18 +110,14 @@
 - (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
 	[super willRotateToInterfaceOrientation:toInterfaceOrientation duration:duration];
 	
-//	dispatch_async( dispatch_get_main_queue(), ^{
-		UICollectionViewLayout *categoryLayout = self.categoriesCollectionView.collectionViewLayout;
-		[categoryLayout invalidateLayout];
-		[self.categoriesCollectionView reloadData];
-		
-		UICollectionViewLayout *subcategoryLayout = self.subcategoriesCollectionView.collectionViewLayout;
-		[subcategoryLayout invalidateLayout];
-		
-		[self.subcategoriesCollectionView reloadData];
-		
-//		[self.videosTableView reloadData];
-//	});
+	UICollectionViewLayout *categoryLayout = self.categoriesCollectionView.collectionViewLayout;
+	[categoryLayout invalidateLayout];
+	[self.categoriesCollectionView reloadData];
+	
+	UICollectionViewLayout *subcategoryLayout = self.subcategoriesCollectionView.collectionViewLayout;
+	[subcategoryLayout invalidateLayout];
+	
+	[self.subcategoriesCollectionView reloadData];
 }
 
 #pragma mark - Moovie

@@ -16,9 +16,6 @@
 @property (strong, nonatomic) IBOutlet UIView *informationView;
 @property (strong, nonatomic) IBOutlet BaseImageView *videoImageView;
 
-@property (nonatomic, assign, readwrite) CGPoint imageOffset;
-- (CGFloat)imageOverflowHeight;
-
 - (void)reset;
 
 @end

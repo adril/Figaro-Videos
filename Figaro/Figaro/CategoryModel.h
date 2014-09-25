@@ -10,9 +10,7 @@
 #import "SubcategoryModel.h"
 
 @protocol CategoryModel
-
 @end
-
 
 @interface CategoryModel : BaseJsonModel
 

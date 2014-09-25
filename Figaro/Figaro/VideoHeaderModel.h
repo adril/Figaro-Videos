@@ -9,7 +9,6 @@
 #import "BaseJsonModel.h"
 
 @protocol VideoHeaderModel
-
 @end
 
 @interface VideoHeaderModel : BaseJsonModel

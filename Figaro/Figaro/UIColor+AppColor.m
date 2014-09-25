@@ -7,17 +7,20 @@
 //
 
 #import "UIColor+AppColor.h"
+#import "AppParameters.h"
 
 @implementation UIColor (AppColor)
 
 //INFO: 
 
 + (UIColor *)color {
-	return [UIColor colorFromHexString:@"#407cc9"];
+	NSString *hexColor = [AppParameters defaultParameters].parameters.color == nil ? @"#407cc9" : [AppParameters defaultParameters].parameters.color;
+	return [UIColor colorFromHexString:hexColor];
 }
 
 + (UIColor *)titleColor {
-	return [UIColor whiteColor];
+	NSString *hexColor = [AppParameters defaultParameters].parameters.titleColor == nil ? @"#000000" : [AppParameters defaultParameters].parameters.titleColor;
+	return [UIColor colorFromHexString:hexColor];
 }
 
 + (UIColor *)fontColor {

@@ -11,7 +11,6 @@
 
 typedef void (^BaseCollectionViewCellCompletionHandler)(id object, UICollectionViewCell **cell, NSIndexPath *indexPath);
 
-
 @interface BaseCollectionView : UICollectionView <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate> {
 	NSMutableArray *_list;
 }

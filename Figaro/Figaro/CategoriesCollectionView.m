@@ -56,8 +56,6 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 	
 	self.didScrollViewDidEndDeceleratingCompletion = ^(id object) {
 		if ([object isKindOfClass:[CategoryModel class]]) {
-//			CategoryModel *category = object;
-			//TODO: call block
 			if (weakSelf.didSelectCategoryCompletion) {
 				weakSelf.didSelectCategoryCompletion(object);
 			}

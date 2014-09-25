@@ -1,9 +1,9 @@
 {
 	"appName" : "Figaro",
-	"color": "#8F142F",
+	"color": "#407cc9",
 	"titleColor": "#ffffff",
 	"backgroundColor": "#000000",
-	"tintColor": "#ffffff",
+	"tintColor": "#407cc9",
 	"defaultDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSSSSSSZZZZ",
 
 	"environements": {

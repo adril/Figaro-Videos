@@ -33,8 +33,6 @@
 	self.titleLabel.textColor = [UIColor color];
 	self.contentLabel.font = [UIFont font];
 	self.contentLabel.textColor = [UIColor fontColor];
-	
-	//	 self.videoImageView.clipsToBounds = NO;
 }
 
 - (void)setVideo:(VideoHeaderModel *)video {
@@ -63,32 +61,6 @@
 	self.titleLabel.text = @"";
 	self.contentLabel.text = @"";
 	self.videoImageView.alpha = 0.0;
-}
-
-- (void)setImageOffset:(CGPoint)imageOffset {
-	// Store padding value
-	_imageOffset = imageOffset;
-	
-	// Grow image view
-	
-	CGRect frame = self.frame;
-	frame.origin = imageOffset;
-	[self layoutIfNeeded];
-	[UIView animateWithDuration:0.4 animations:^{
-		self.videoImageView.frame = frame;
-		[self layoutIfNeeded];
-	}];
-	
-	
-	if (NO) {
-		CGRect frame = self.videoImageView.bounds;
-		CGRect offsetFrame = CGRectOffset(frame, _imageOffset.x, _imageOffset.y);
-		self.videoImageView.frame = offsetFrame;
-	}
-}
-
-- (CGFloat)imageOverflowHeight {
-	return 0/*self.videoImageView.image.size.height*/ - self.videoImageView.frame.size.height;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

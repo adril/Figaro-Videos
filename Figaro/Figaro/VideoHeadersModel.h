@@ -9,9 +9,6 @@
 #import "BaseJsonModel.h"
 #import "VideoHeaderModel.h"
 
-@protocol VideoHeadersModel
-@end
-
 @interface VideoHeadersModel : BaseJsonModel
 
 @property (nonatomic, strong) NSMutableArray<VideoHeaderModel> *videoHeaders;

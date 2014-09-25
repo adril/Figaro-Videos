@@ -38,7 +38,6 @@ static NSString *VideoTableViewCellIdentifier = @"VideoTableViewCell";
 			*cell = [weakSelf dequeueReusableCellWithIdentifier:VideoTableViewCellIdentifier];
 			
 			VideoTableViewCell *videoCell = (VideoTableViewCell *)*cell;
-//			[weakSelf updateImageViewCellOffset:videoCell];
 			videoCell.video = object;
 		}
 	};
@@ -49,32 +48,6 @@ static NSString *VideoTableViewCellIdentifier = @"VideoTableViewCell";
 	if (videos) {
 		self.list = videos.videoHeaders;
 	}
-}
-
-#pragma mark - UIScrollViewdelegate methods
-
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-	for (VideoTableViewCell *cell in self.visibleCells) {
-//		[self updateImageViewCellOffset:cell];
-	}
-}
-
-- (void)updateImageViewCellOffset:(VideoTableViewCell *)cell {
-	
-	if (YES) {
-		CGFloat imageOverflowHeight = [cell imageOverflowHeight];
-		
-		CGFloat cellOffset = cell.frame.origin.y - self.contentOffset.y;
-		CGFloat maxOffset = self.frame.size.height - cell.frame.size.height;
-		CGFloat verticalOffset = imageOverflowHeight * (0.5f - cellOffset/maxOffset);
-		
-		cell.imageOffset = CGPointMake(0.0f, verticalOffset);
-	}
-//	else if (YES) {
-//		CGFloat yOffset = ((self.contentOffset.y - self.frame.origin.y) / cell.frame.size.height) * IMAGE_OFFSET_SPEED;
-//		cell.imageOffset = CGPointMake(0.0f, yOffset);
-//
-//	}
 }
 
 @end

@@ -24,10 +24,7 @@
 	
 	_currentUser = nil;
 	
-	//TODO: close and clear session
-	
-//	[FBSession.activeSession closeAndClearTokenInformation];
-//	[[AppDelegate appDelegate].apiManager cancelAllOperations];
+	//TODO: close and clear session	
 }
 
 @end
