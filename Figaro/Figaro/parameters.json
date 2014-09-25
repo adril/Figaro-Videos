@@ -1,0 +1,26 @@
+{
+	"appName" : "Figaro",
+	"color": "#8F142F",
+	"titleColor": "#ffffff",
+	"backgroundColor": "#000000",
+	"tintColor": "#ffffff",
+	"defaultDateFormat":"yyyy-MM-dd'T'HH:mm:ss.SSSSSSSZZZZ",
+
+	"environements": {
+		"developement": {
+			"api": "http://192.168.1.58:1337/",
+			"host": "192.168.1.58",
+			"port": "1337"
+		},
+		"production": {
+			"api": "http://figaro.service.yagasp.com/",
+			"host": "figaro.service.yagasp.com",
+			"port": "80"
+		},		
+		"locale": {
+			"api": "http://localhost:1337/",
+			"host": "localhost",
+			"port": "1337"
+		}
+	}
+}

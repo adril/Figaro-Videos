@@ -1,0 +1,14 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, "6.0"
+
+target "Figaro" do
+       pod 'AFNetworking', '~> 2.4.1'
+       pod 'Colours', '~> 5.5.0'
+       pod 'JSONModel', '~> 1.0.1'
+       pod 'Underscore.m', '~> 0.2.1'
+end
+
+target "FigaroTests" do
+
+end
+
