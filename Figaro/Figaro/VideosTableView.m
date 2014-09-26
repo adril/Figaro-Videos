@@ -10,7 +10,6 @@
 #import "VideoHeaderModel.h"
 #import "VideoTableViewCell.h"
 
-#define IMAGE_OFFSET_SPEED 12
 static NSString *VideoTableViewCellIdentifier = @"VideoTableViewCell";
 
 @implementation VideosTableView

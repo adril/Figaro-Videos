@@ -22,12 +22,10 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 	
 	self.cellForRowAtIndexPathCompletion = ^(id object, UICollectionViewCell **cell, NSIndexPath *indexPath) {
 		if ([object isKindOfClass:[CategoryModel class]]) {
-//			*cell = [weakSelf dequeueReusableCellWithReuseIdentifier:CategoryCollectionViewCellIdentifier forIndexPath:indexPath];
-//			
-//			CategoryCollectionViewCell *categoryCell = (CategoryCollectionViewCell *)*cell;
-//			CategoryModel *category = object;
-
+			*cell = [weakSelf dequeueReusableCellWithReuseIdentifier:CategoryCollectionViewCellIdentifier forIndexPath:indexPath];
 			
+			CategoryCollectionViewCell *categoryCell = (CategoryCollectionViewCell *)*cell;
+			CategoryModel *category = object;
 			categoryCell.category = category.category;
 			categoryCell.textColor = weakSelf.textColor;
 			categoryCell.font = [UIFont titleFont];
