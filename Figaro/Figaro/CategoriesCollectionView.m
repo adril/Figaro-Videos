@@ -13,23 +13,21 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 
 @implementation CategoriesCollectionView
 
-- (void)awakeFromNib {
-	[self registerNibWithIdentifier:CategoryCollectionViewCellIdentifier];
-	[super awakeFromNib];
-
-	[self configure];
-}
-
 - (void)configure {
 	[super configure];
+	
+	[self registerNibWithIdentifier:CategoryCollectionViewCellIdentifier];
+	
 	__weak __typeof(self)weakSelf = self;
 	
 	self.cellForRowAtIndexPathCompletion = ^(id object, UICollectionViewCell **cell, NSIndexPath *indexPath) {
 		if ([object isKindOfClass:[CategoryModel class]]) {
-			*cell = [weakSelf dequeueReusableCellWithReuseIdentifier:CategoryCollectionViewCellIdentifier forIndexPath:indexPath];
+//			*cell = [weakSelf dequeueReusableCellWithReuseIdentifier:CategoryCollectionViewCellIdentifier forIndexPath:indexPath];
+//			
+//			CategoryCollectionViewCell *categoryCell = (CategoryCollectionViewCell *)*cell;
+//			CategoryModel *category = object;
+
 			
-			CategoryCollectionViewCell *categoryCell = (CategoryCollectionViewCell *)*cell;
-			CategoryModel *category = object;
 			categoryCell.category = category.category;
 			categoryCell.textColor = weakSelf.textColor;
 			categoryCell.font = [UIFont titleFont];
@@ -51,7 +49,6 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 		if ([object isKindOfClass:[CategoryModel class]]) {
 			
 		}
-		
 	};
 	
 	self.didScrollViewDidEndDeceleratingCompletion = ^(id object) {
@@ -64,8 +61,7 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 				weakSelf.didSelectSubcategoryCompletion(object);
 			}
 			
-		}
-		
+		}		
 	};
 }
 

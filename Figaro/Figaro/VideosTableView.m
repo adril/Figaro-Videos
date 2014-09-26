@@ -15,12 +15,6 @@ static NSString *VideoTableViewCellIdentifier = @"VideoTableViewCell";
 
 @implementation VideosTableView
 
-- (void)awakeFromNib {
-	[super awakeFromNib];
-	
-	[self configure];
-}
-
 - (void)configure {
 	[super configure];
 	
