@@ -23,6 +23,8 @@ typedef UITableViewCell* (^BaseTableViewCellCompletionHandler)(id object, UITabl
 }
 
 @property (nonatomic, strong) NSMutableArray *list;
+
+//INFO: you have the choice to use delegate or block
 @property (nonatomic, strong) id<BaseTableViewDelegate> baseDelegate;
 
 @property (nonatomic, strong) BaseCompletionHandler didSelectItemCompletion;

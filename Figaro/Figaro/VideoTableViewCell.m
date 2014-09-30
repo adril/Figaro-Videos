@@ -15,19 +15,13 @@
 @property (strong, nonatomic) IBOutlet BaseLabel *titleLabel;
 @property (strong, nonatomic) IBOutlet BaseLabel *contentLabel;
 
-
 @end
 
 @implementation VideoTableViewCell
 
-- (void)awakeFromNib {
-	// Initialization code
-	[super awakeFromNib];
-	
-	[self configure];
-}
-
 - (void)configure {
+	[super configure];
+	
 	self.informationView.backgroundColor = [UIColor colorWithWhite:1.0 alpha:0.8];
 	self.titleLabel.font = [UIFont titleFont];
 	self.titleLabel.textColor = [UIColor color];

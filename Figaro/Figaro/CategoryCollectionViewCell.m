@@ -17,13 +17,8 @@
 
 @implementation CategoryCollectionViewCell
 
-- (void)awakeFromNib {
-	[super awakeFromNib];
-	
-	[self configure];
-}
-
 - (void)configure {
+	[super configure];
 	self.categoryLabel.font = [UIFont titleFont];
 }
 

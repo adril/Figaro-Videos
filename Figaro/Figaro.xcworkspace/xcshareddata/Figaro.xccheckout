@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C73CD3D6-D4F2-4F80-8302-57116F9E316A</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Figaro</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1BF377740DE2A9BA2661AC2405287D07D918F66C</key>
+		<string>https://github.com/adril/Figaro-Videos.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Figaro/Figaro.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1BF377740DE2A9BA2661AC2405287D07D918F66C</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/adril/Figaro-Videos.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1BF377740DE2A9BA2661AC2405287D07D918F66C</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1BF377740DE2A9BA2661AC2405287D07D918F66C</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Figaro-Videos</string>
+		</dict>
+	</array>
+</dict>
+</plist>

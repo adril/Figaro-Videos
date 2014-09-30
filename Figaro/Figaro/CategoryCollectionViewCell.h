@@ -6,10 +6,10 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseCollectionViewCell.h"
 #import "VideosTableView.h"
 
-@interface CategoryCollectionViewCell : UICollectionViewCell
+@interface CategoryCollectionViewCell : BaseCollectionViewCell
 
 @property (nonatomic, strong) NSString *category;
 @property (nonatomic, strong) UIColor *textColor;

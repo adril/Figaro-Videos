@@ -23,6 +23,7 @@ typedef UICollectionViewCell *(^BaseCollectionViewCellCompletionHandler)(id obje
 }
 
 @property (nonatomic, strong) NSMutableArray *list;
+//INFO: you have the choice to use delegate or block
 @property (nonatomic, strong) id<BaseCollectionViewDelegate> baseDelegate;
 
 @property (nonatomic, strong) BaseCompletionHandler didSelectItemCompletion;

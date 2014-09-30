@@ -6,11 +6,11 @@
 //
 //
 
-#import <UIKit/UIKit.h>
+#import "BaseTableViewCell.h"
 #import "VideoHeaderModel.h"
 #import "BaseImageView.h"
 
-@interface VideoTableViewCell : UITableViewCell
+@interface VideoTableViewCell : BaseTableViewCell
 
 @property(nonatomic, strong) VideoHeaderModel *video;
 @property (strong, nonatomic) IBOutlet UIView *informationView;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		903298FD19DAD792007835A8 /* BaseCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 903298FC19DAD792007835A8 /* BaseCollectionViewCell.m */; };
+		9032990119DAD803007835A8 /* BaseTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9032990019DAD803007835A8 /* BaseTableViewCell.m */; };
 		907A982019D2057200FB2AB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 907A981F19D2057200FB2AB7 /* main.m */; };
 		907A982319D2057200FB2AB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 907A982219D2057200FB2AB7 /* AppDelegate.m */; };
 		907A982919D2057200FB2AB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 907A982719D2057200FB2AB7 /* Main.storyboard */; };
@@ -62,6 +64,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		903298FB19DAD792007835A8 /* BaseCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseCollectionViewCell.h; sourceTree = "<group>"; };
+		903298FC19DAD792007835A8 /* BaseCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseCollectionViewCell.m; sourceTree = "<group>"; };
+		903298FF19DAD803007835A8 /* BaseTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseTableViewCell.h; sourceTree = "<group>"; };
+		9032990019DAD803007835A8 /* BaseTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseTableViewCell.m; sourceTree = "<group>"; };
 		907A981A19D2057200FB2AB7 /* Figaro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Figaro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		907A981E19D2057200FB2AB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		907A981F19D2057200FB2AB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -169,6 +175,24 @@
 				E5885F15133E44D6B3932C43 /* libPods-Figaro.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		903298FA19DAD776007835A8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				903298FB19DAD792007835A8 /* BaseCollectionViewCell.h */,
+				903298FC19DAD792007835A8 /* BaseCollectionViewCell.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		903298FE19DAD7F1007835A8 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				903298FF19DAD803007835A8 /* BaseTableViewCell.h */,
+				9032990019DAD803007835A8 /* BaseTableViewCell.m */,
+			);
+			name = Base;
 			sourceTree = "<group>";
 		};
 		907A981119D2057200FB2AB7 = {
@@ -331,6 +355,7 @@
 		90AE7F8219D3676D00C9EC0A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				903298FA19DAD776007835A8 /* Base */,
 				90AE7F8119D3675E00C9EC0A /* Category */,
 			);
 			name = Cell;
@@ -582,6 +607,7 @@
 		90E1778C19D32E2B00103A71 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				903298FE19DAD7F1007835A8 /* Base */,
 				90AE7F8019D3674400C9EC0A /* Video */,
 			);
 			name = Cell;
@@ -749,6 +775,7 @@
 				90E1773119D2FEBA00103A71 /* Base.m in Sources */,
 				90E1777F19D320FD00103A71 /* BaseViewController.m in Sources */,
 				90E1779719D333A000103A71 /* CategoriesCollectionView.m in Sources */,
+				9032990119DAD803007835A8 /* BaseTableViewCell.m in Sources */,
 				90E1779E19D3345000103A71 /* BaseCollectionView.m in Sources */,
 				90E1776519D3062C00103A71 /* ParametersModel.m in Sources */,
 				90E1775819D3046C00103A71 /* AppSession.m in Sources */,
@@ -767,6 +794,7 @@
 				90E1779219D32EA800103A71 /* VideoTableViewCell.m in Sources */,
 				90E1774919D302E600103A71 /* CategoriesModel.m in Sources */,
 				90E1778719D326B300103A71 /* VideosTableView.m in Sources */,
+				903298FD19DAD792007835A8 /* BaseCollectionViewCell.m in Sources */,
 				907A982019D2057200FB2AB7 /* main.m in Sources */,
 				90A76DD019D3C25D004EFA67 /* BaseImageView.m in Sources */,
 				90E1776F19D3095D00103A71 /* ErrorModel.m in Sources */,

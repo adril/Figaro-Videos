@@ -81,7 +81,6 @@
 
 - (void)reload {
 	[self.list removeAllObjects];
-//	[self reloadData];
 	[self reloadSection];
 }
 
