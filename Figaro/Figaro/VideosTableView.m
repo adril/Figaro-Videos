@@ -25,14 +25,15 @@ static NSString *VideoTableViewCellIdentifier = @"VideoTableViewCell";
 		//TODO: call completion block
 	};
 	
-	self.cellForRowAtIndexPathCompletion = ^(id object, UITableViewCell **cell, NSIndexPath *indexPath) {
+	self.cellForRowAtIndexPathCompletion = ^(id object, UITableViewCell *cell, NSIndexPath *indexPath) {
 		
 		if ([object isKindOfClass:[VideoHeaderModel class]]) {
-			*cell = [weakSelf dequeueReusableCellWithIdentifier:VideoTableViewCellIdentifier];
+			cell = [weakSelf dequeueReusableCellWithIdentifier:VideoTableViewCellIdentifier];
 			
-			VideoTableViewCell *videoCell = (VideoTableViewCell *)*cell;
+			VideoTableViewCell *videoCell = (VideoTableViewCell *)cell;
 			videoCell.video = object;
 		}
+		return cell;
 	};
 }
 

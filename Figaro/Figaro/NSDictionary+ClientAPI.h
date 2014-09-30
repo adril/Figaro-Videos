@@ -18,6 +18,7 @@
 - (void)postWithRoute:(NSString *)route completion:(BaseCompletionHandler)completion;
 
 - (void)putWithRessourceName:(NSString *)ressourceName route:(NSString *)route completion:(BaseCompletionHandler)completion;
+
 - (void)deleteWithRessourceName:(NSString *)ressourceName route:(NSString *)route completion:(BaseCompletionHandler)completion;
 
 @end

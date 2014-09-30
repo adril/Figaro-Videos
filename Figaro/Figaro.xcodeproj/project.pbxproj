@@ -656,6 +656,7 @@
 				TargetAttributes = {
 					907A981919D2057200FB2AB7 = {
 						CreatedOnToolsVersion = 6.0;
+						DevelopmentTeam = GPRDQTBPV3;
 					};
 					907A983219D2057200FB2AB7 = {
 						CreatedOnToolsVersion = 6.0;
@@ -900,7 +901,7 @@
 			baseConfigurationReference = B0619C4795484093B40B3E54 /* Pods-Figaro.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Adrien Guffens (CJXTPMAH8V)";
 				GCC_PREFIX_HEADER = "Figaro/Figaro-Prefix.pch";
 				INFOPLIST_FILE = Figaro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -913,7 +914,7 @@
 			baseConfigurationReference = B0619C4795484093B40B3E54 /* Pods-Figaro.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Adrien Guffens (CJXTPMAH8V)";
 				GCC_PREFIX_HEADER = "Figaro/Figaro-Prefix.pch";
 				INFOPLIST_FILE = Figaro/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

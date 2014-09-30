@@ -23,7 +23,6 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view.
-	[self configure];
 }
 
 - (void)configure {
@@ -38,8 +37,6 @@
 	[CategoriesModel get:^(id object) {
 		if ([object isKindOfClass:[CategoriesModel class]]) {
 			CategoriesModel *categories = object;
-			
-			DLog(@"categories: %@", categories);
 			self.categoriesCollectionView.categories = categories;
 			CategoryModel *firstCategory = [categories.categories firstObject];
 			self.selectedCategory = firstCategory;

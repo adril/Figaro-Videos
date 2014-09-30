@@ -41,12 +41,10 @@
 }
 
 - (void)setList:(NSMutableArray *)list {
-	dispatch_async( dispatch_get_main_queue(), ^{
+	dispatch_async(dispatch_get_main_queue(), ^{
 		[self.list removeAllObjects];
 		_list = list;
-		[self beginUpdates];
-		[self reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
-		[self endUpdates];
+		[self reloadSection];
 	});
 }
 
@@ -56,7 +54,7 @@
 	}
 	
 	[self.list addObjectsFromArray:list];
-	[self reloadData];
+	[self reloadSection];
 }
 
 - (void)insertItem:(id)object {
@@ -79,9 +77,18 @@
 	[self endUpdates];
 }
 
+#pragma mark - Reload
+
 - (void)reload {
 	[self.list removeAllObjects];
-	[self reloadData];
+//	[self reloadData];
+	[self reloadSection];
+}
+
+- (void)reloadSection {
+	[self beginUpdates];
+	[self reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationFade];
+	[self endUpdates];
 }
 
 #pragma mark - Nib registration
@@ -96,11 +103,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Default"];
-	
-	if (self.cellForRowAtIndexPathCompletion) {
-		id object = [self.list objectAtIndex:indexPath.row];
 		
-		self.cellForRowAtIndexPathCompletion(object, &cell, indexPath);
+	if ([self.baseDelegate respondsToSelector:@selector(cellForRowAtIndexPath:withObject:)]) {
+		id object = [self.list objectAtIndex:indexPath.row];
+		cell = [self.baseDelegate cellForRowAtIndexPath:indexPath withObject:object];
+	} else if (self.cellForRowAtIndexPathCompletion) {
+		id object = [self.list objectAtIndex:indexPath.row];
+		cell = self.cellForRowAtIndexPathCompletion(object, cell, indexPath);
 	}
 	
 	return cell;
@@ -116,10 +125,12 @@
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
 	
-	id object = [self.list objectAtIndex:indexPath.row];
-	
 	if (self.willDisplayCellCompletion) {
-		self.willDisplayCellCompletion(object, &cell, indexPath);
+		id object = [self.list objectAtIndex:indexPath.row];
+		self.willDisplayCellCompletion(object, cell, indexPath);
+	} else if ([self.baseDelegate respondsToSelector:@selector(willDisplayCellAtIndexPath:withObject:)]) {
+		id object = [self.list objectAtIndex:indexPath.row];
+		[self.baseDelegate willDisplayCellAtIndexPath:indexPath withObject:object];
 	}
 }
 
@@ -129,6 +140,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	return [self.list count];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if ([self.baseDelegate respondsToSelector:@selector(heightForRowAtIndexPath:withObject:)]) {
+		id object = [self.list objectAtIndex:indexPath.row];
+		return [self.baseDelegate heightForRowAtIndexPath:indexPath withObject:object];
+	}
+	return self.rowHeight;
 }
 
 #pragma mark - TableView tools
@@ -145,5 +164,6 @@
 	NSIndexPath *indexPath = [self indexPathForObject:object];
 	[self scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionBottom animated:NO];
 }
+
 
 @end

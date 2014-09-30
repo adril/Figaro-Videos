@@ -83,11 +83,12 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 	
 	UICollectionViewCell *cell = nil;
+	id object = [self.list objectAtIndex:indexPath.row];
 	
-	if (self.cellForRowAtIndexPathCompletion) {
-		id object = [self.list objectAtIndex:indexPath.row];
-		
-		self.cellForRowAtIndexPathCompletion(object, &cell, indexPath);
+	if ([self.baseDelegate respondsToSelector:@selector(cellForRowAtIndexPath:withObject:)]) {
+		cell = [self.baseDelegate cellForRowAtIndexPath:indexPath withObject:object];
+	} else if (self.cellForRowAtIndexPathCompletion) {
+		cell = self.cellForRowAtIndexPathCompletion(object, cell, indexPath);
 	}
 	
 	return cell;
@@ -104,11 +105,14 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 	[self performBatchUpdates:^{
-		if (self.didScrollViewDidEndDeceleratingCompletion) {
+		
+		if ([self.baseDelegate respondsToSelector:@selector(didScrollAtIndexPath:withObject:)]) {
+			
+		} else if (self.didScrollAtIndexPathCompletion) {
 			CGPoint centerPoint = CGPointMake(self.frame.size.width / 2 + scrollView.contentOffset.x, self.frame.size.height / 2 + scrollView.contentOffset.y);
 			NSIndexPath *indexPath = [self indexPathForItemAtPoint:centerPoint];
 			id object = [self.list objectAtIndex:indexPath.row];
-			self.didScrollViewDidEndDeceleratingCompletion(object);
+			self.didScrollAtIndexPathCompletion(object);
 		}
 	} completion:nil];
 }

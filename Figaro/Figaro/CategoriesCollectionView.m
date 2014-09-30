@@ -20,11 +20,11 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 	
 	__weak __typeof(self)weakSelf = self;
 	
-	self.cellForRowAtIndexPathCompletion = ^(id object, UICollectionViewCell **cell, NSIndexPath *indexPath) {
+	self.cellForRowAtIndexPathCompletion = ^(id object, UICollectionViewCell *cell, NSIndexPath *indexPath) {
 		if ([object isKindOfClass:[CategoryModel class]]) {
-			*cell = [weakSelf dequeueReusableCellWithReuseIdentifier:CategoryCollectionViewCellIdentifier forIndexPath:indexPath];
+			cell = [weakSelf dequeueReusableCellWithReuseIdentifier:CategoryCollectionViewCellIdentifier forIndexPath:indexPath];
 			
-			CategoryCollectionViewCell *categoryCell = (CategoryCollectionViewCell *)*cell;
+			CategoryCollectionViewCell *categoryCell = (CategoryCollectionViewCell *)cell;
 			CategoryModel *category = object;
 			categoryCell.category = category.category;
 			categoryCell.textColor = weakSelf.textColor;
@@ -32,15 +32,17 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 			categoryCell.backgroundColor = [UIColor clearColor];
 		} else if ([object isKindOfClass:[SubcategoryModel class]]) {
 
-			*cell = [weakSelf dequeueReusableCellWithReuseIdentifier:CategoryCollectionViewCellIdentifier forIndexPath:indexPath];
+			cell = [weakSelf dequeueReusableCellWithReuseIdentifier:CategoryCollectionViewCellIdentifier forIndexPath:indexPath];
 			
-			CategoryCollectionViewCell *categoryCell = (CategoryCollectionViewCell *)*cell;
+			CategoryCollectionViewCell *categoryCell = (CategoryCollectionViewCell *)cell;
 			SubcategoryModel *subcategory = object;
 			categoryCell.category = subcategory.name;
 			categoryCell.textColor = weakSelf.textColor;
 			categoryCell.font = [UIFont subtitleFont];
 			categoryCell.backgroundColor = [UIColor clearColor];
 		}
+		
+		return cell;
 	};
 	
 	self.didSelectItemCompletion = ^(id object) {
@@ -49,7 +51,7 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 		}
 	};
 	
-	self.didScrollViewDidEndDeceleratingCompletion = ^(id object) {
+	self.didScrollAtIndexPathCompletion = ^(id object) {
 		if ([object isKindOfClass:[CategoryModel class]]) {
 			if (weakSelf.didSelectCategoryCompletion) {
 				weakSelf.didSelectCategoryCompletion(object);
@@ -57,8 +59,7 @@ static NSString *CategoryCollectionViewCellIdentifier = @"CategoryCollectionView
 		} else if ([object isKindOfClass:[SubcategoryModel class]]) {
 			if (weakSelf.didSelectSubcategoryCompletion) {
 				weakSelf.didSelectSubcategoryCompletion(object);
-			}
-			
+			}			
 		}		
 	};
 }

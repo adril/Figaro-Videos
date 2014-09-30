@@ -9,13 +9,21 @@
 #import <UIKit/UIKit.h>
 #import "Base.h"
 
-typedef void (^BaseTableViewCellCompletionHandler)(id object, UITableViewCell **cell, NSIndexPath *indexPath);
+typedef UITableViewCell* (^BaseTableViewCellCompletionHandler)(id object, UITableViewCell *cell, NSIndexPath *indexPath);
+
+@protocol BaseTableViewDelegate <NSObject>
+@optional
+- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
+- (UITableViewCell *)cellForRowAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
+- (void)willDisplayCellAtIndexPath:(NSIndexPath *)indexPath withObject:(id)object;
+@end
 
 @interface BaseTableView : UITableView <UITableViewDataSource, UITableViewDelegate> {
 	NSMutableArray *_list;
 }
 
 @property (nonatomic, strong) NSMutableArray *list;
+@property (nonatomic, strong) id<BaseTableViewDelegate> baseDelegate;
 
 @property (nonatomic, strong) BaseCompletionHandler didSelectItemCompletion;
 @property (nonatomic, strong) BaseTableViewCellCompletionHandler cellForRowAtIndexPathCompletion;
